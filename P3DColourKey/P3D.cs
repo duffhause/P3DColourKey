@@ -247,15 +247,15 @@ namespace P3DColourKey
 			}
 
             byte[] output = new byte[uncompressedLength];
+            Root.FullChunkSize = uncompressedLength;
+            Array.Copy(PackChunk(Root), 0, output, 0, uncompressedLength);
 
             if (originalHash != Hash.GetHashSHA1(output)) 
             {
                 BinaryWriter outputWriter = new BinaryWriter(File.Open(path, FileMode.Create, FileAccess.Write));
-                Root.FullChunkSize = uncompressedLength;
-                Array.Copy(PackChunk(Root), 0, output, 0, uncompressedLength);
                 outputWriter.Write(output);
                 outputWriter.Close();
-            } 
+            }
         }
     }
 }
