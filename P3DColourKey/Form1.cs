@@ -127,6 +127,12 @@ namespace P3DColourKey
 		// Submit single P3D
 		private void submitSingleP3D_Click(object sender, EventArgs e)
 		{
+			// Check file exists
+			if (!File.Exists(openFileDialog1.FileName))
+			{
+				MessageBox.Show(String.Format("File \"{0}\"\nDoes not exist", openFileDialog1.FileName));
+				return;
+			}
 			progressBar1.Value = 0;
 			progressBar1.Maximum = 1;
 			Shindler(openFileDialog1.FileName);
@@ -136,6 +142,13 @@ namespace P3DColourKey
 		// Submit folder
 		private void button2_Click(object sender, EventArgs e)
 		{
+			// Check folder exists
+			if (!Directory.Exists(folderBrowserDialog1.SelectedPath))
+			{
+				MessageBox.Show(String.Format("Folder \"{0}\"\nDoes not exist", folderBrowserDialog1.SelectedPath));
+				return;
+			}
+
 			int fileCount = GetFileCount(folderBrowserDialog1.SelectedPath);
 			progressBar1.Maximum = fileCount;
 			progressBar1.Value = 0;
