@@ -1,5 +1,5 @@
-# Pleasentville's P3D
-Pleasentville's P3D is a tool that will take one or more P3D files and apply a colour key filter to all of their sprites and textures like in the films *"Pleasentville"* and *"Shindler's List"*
+# P3D Colour Key
+P3D Colour Key is a tool that will take one or more P3D files and apply a colour key filter to all of their sprites and textures like in the films *"Pleasentville"* and *"Shindler's List"*
 ### GUI
 ![GUI](https://i.imgur.com/AW0ofCF.png)
 ### Before and After
